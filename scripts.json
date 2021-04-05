@@ -1,5 +1,13 @@
 {
   "scripts": {
+    "start": {
+      "cmd": "aleph start",
+      "imap": "import_map.json"
+    },
+    "build": {
+      "cmd": "aleph build",
+      "imap": "import_map.json"
+    },
     "dev": {
       "cmd": "aleph dev",
       "imap": "import_map.json"
