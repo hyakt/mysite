@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": {
+      "cmd": "aleph dev",
+      "imap": "import_map.json"
+    },
+    "fmt": "deno fmt --ignore='./node_modules/'"
+  }
+}
