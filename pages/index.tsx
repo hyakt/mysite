@@ -1,9 +1,10 @@
 import React from "react";
-import "https://esm.sh/tailwindcss/dist/tailwind.min.css";
+import "./index.css";
+import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="container">
       <div className="flex flex-col items-center">
         <div>
           <img
@@ -12,7 +13,9 @@ export default function Home() {
           />
         </div>
         <div className="mt-8">
-          <div className="text-xl text-center font-semibold">Hayato Kajiyama</div>
+          <div className="text-xl text-center font-semibold">
+            Hayato Kajiyama
+          </div>
           <div className="text-base text-center text-gray-800 mt-2">
             Web Engineer ♥ Emacs, JavaScript, HCI and 🍺
           </div>
