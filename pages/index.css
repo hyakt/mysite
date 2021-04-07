@@ -35,9 +35,6 @@ body {
   font-family: var(--font-family-sans-serif);
 }
 
-.scroll-container {
-}
-
 .page {
   height: 100vh;
   display: flex;
@@ -71,4 +68,13 @@ body {
   margin-top: 40px;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.bye {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-family-display);
+  font-weight: bold;
+  font-size: 2rem;
 }
