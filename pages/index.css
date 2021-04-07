@@ -55,6 +55,26 @@ body {
   font-weight: bold;
 }
 
+.profile-center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.socials {
+  display: grid;
+  justify-content: end;
+  gap: 44px;
+}
+
+.socials__a {
+}
+
+.socials__a:hover {
+  transition: transform 100ms ease-in-out;
+  transform: scale(1.1);
+}
+
 .profile-img {
   margin-top: 40px;
 }
@@ -68,6 +88,25 @@ body {
   margin-top: 40px;
   font-size: 2rem;
   font-weight: bold;
+}
+
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.profile-scroll {
+  position: absolute;
+  bottom: 40px;
+  font-size: 3rem;
+  animation: flash 1.2s linear infinite;
+  cursor: pointer;
+  user-select: none;
 }
 
 .interests {
