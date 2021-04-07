@@ -36,7 +36,6 @@ body {
 }
 
 .scroll-container {
-  transition: transform 800ms ease-in-out;
 }
 
 .page {

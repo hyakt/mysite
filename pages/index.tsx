@@ -1,6 +1,42 @@
-import React, { useState } from "react";
+import React, { Children, useCallback, useRef, useState } from "react";
 
 import "./index.css";
+
+const ScrollPageContainer: React.FC = ({ children }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const childrenCount = Children.count(children);
+
+  const animationDelay = 800;
+  const animationDelayBuffer = 200;
+  const scrolling = useRef<boolean>(false);
+
+  const handleWheel = useCallback<React.WheelEventHandler>(
+    ({ currentTarget }) => {
+      if (!scrolling.current) {
+        scrolling.current = true;
+        currentPage === childrenCount - 1
+          ? setCurrentPage(0)
+          : setCurrentPage(currentPage + 1);
+        currentTarget.style.transform = `translateY(-${currentPage * 100}vh)`;
+
+        setTimeout(() => {
+          scrolling.current = false;
+        }, animationDelay + animationDelayBuffer);
+      }
+    },
+    [currentPage, childrenCount],
+  );
+
+  return (
+    <div
+      className="scroll-container"
+      onWheel={handleWheel}
+      style={{ transition: `transform ${animationDelay}ms ease-in-out` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Profile: React.FC = () => (
   <div className="page">
@@ -33,19 +69,11 @@ const Portfolio: React.FC = () => (
 );
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState(0);
-
   return (
-    <div
-      className="scroll-container"
-      onClick={({ currentTarget }) => {
-        setCurrentPage(currentPage + 1);
-        currentTarget.style.transform = `translateY(-${currentPage * 100}vh)`;
-      }}
-    >
+    <ScrollPageContainer>
       <Profile />
       <Skill />
       <Portfolio />
-    </div>
+    </ScrollPageContainer>
   );
 }
