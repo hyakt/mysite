@@ -31,10 +31,15 @@
 }
 
 body {
+  overflow: hidden;
   font-family: var(--font-family-sans-serif);
 }
 
-.container {
+.scroll-container {
+  transition: transform 800ms ease-in-out;
+}
+
+.page {
   height: 100vh;
   display: flex;
   justify-content: center;
