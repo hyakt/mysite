@@ -6,12 +6,14 @@
     },
     "build": {
       "cmd": "aleph build",
+      "reload": true,
       "imap": "import_map.json"
     },
     "dev": {
       "cmd": "aleph dev",
       "imap": "import_map.json"
     },
-    "fmt": "deno fmt --ignore='./node_modules/'"
+    "fmt": "deno fmt",
+    "deploy": "vercel"
   }
 }
