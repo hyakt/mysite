@@ -7,7 +7,7 @@ export default function App(
   return (
     <main>
       <head>
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=768px" />
       </head>
       <Page {...pageProps} />
     </main>
