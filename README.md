@@ -2,13 +2,14 @@
 My profile site🐷
 
 ## TODO
-- [ ] check Mobile
+- [x] check Mobile
 - [ ] add Google Analytics
 - [ ] add favicon
 - [ ] add Project Page
 - [ ] add Blog
 - [ ] add OGP
 - [ ] change Domain(puts to hyakt.dev)
+- [ ] add mediaquery
 
 ## How to deploy‍💁‍♀️
 1. `sh ./init.sh`
@@ -16,5 +17,3 @@ My profile site🐷
 
 ## Design🎨
 https://www.figma.com/file/QGtAyQMIVCUZCgppdcKiES/mysite
-
-

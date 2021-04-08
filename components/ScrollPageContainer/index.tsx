@@ -30,6 +30,7 @@ export const ScrollPageContainer: React.FC<Props> = (
   const scrolling = useRef<boolean>(false);
   const scrollContainer = useRef<any>(null);
   const scrollNavigator = useRef<any>(null);
+  const previousTouchMove = useRef<any>(null);
 
   const scrollPage = useCallback((targetPageIndex: number): void => {
     scrolling.current = true;
@@ -41,8 +42,14 @@ export const ScrollPageContainer: React.FC<Props> = (
 
     setTimeout(() => {
       scrolling.current = false;
+      previousTouchMove.current = null;
     }, animationDelay + animationDelayBuffer);
-  }, [scrolling.current, animationDelay, animationDelayBuffer]);
+  }, [
+    scrolling.current,
+    animationDelay,
+    animationDelayBuffer,
+    previousTouchMove.current,
+  ]);
 
   const scrollPageDown = useCallback(() => {
     if (
@@ -58,6 +65,7 @@ export const ScrollPageContainer: React.FC<Props> = (
     scrolling.current,
     currentPageIndex,
     lastPageIndex,
+    previousTouchMove.current,
   ]);
 
   const scrollPageUp = useCallback(() => {
@@ -74,7 +82,23 @@ export const ScrollPageContainer: React.FC<Props> = (
     scrolling.current,
     currentPageIndex,
     lastPageIndex,
+    previousTouchMove.current,
   ]);
+
+  const handleTouchMove = useCallback<React.TouchEventHandler>(
+    (event) => {
+      if (previousTouchMove.current) {
+        if (event?.touches[0]?.clientY > previousTouchMove.current) {
+          scrollPageUp();
+        } else {
+          scrollPageDown();
+        }
+      } else {
+        previousTouchMove.current = event.touches[0].clientY;
+      }
+    },
+    [scrollPageUp, scrollPageDown],
+  );
 
   const handleWheel = useCallback<React.WheelEventHandler>(
     (event) => {
@@ -86,13 +110,14 @@ export const ScrollPageContainer: React.FC<Props> = (
         }
       }
     },
-    [currentPageIndex, lastPageIndex],
+    [scrollPageUp, scrollPageDown],
   );
 
   return (
     <div
       ref={scrollContainer}
       onWheel={handleWheel}
+      onTouchMove={handleTouchMove}
       style={{ transition: `transform ${animationDelay}ms ease-in-out` }}
     >
       <div
