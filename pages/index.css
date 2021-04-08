@@ -90,15 +90,10 @@ body {
   font-weight: bold;
 }
 
-@keyframes flash {
+@keyframes scollDown {
   0% {
     opacity: 0;
   }
-
-  50% {
-    opacity: 0.5;
-  }
-
   100% {
     opacity: 1;
     transform: translateY(16px)
@@ -109,7 +104,7 @@ body {
   position: absolute;
   bottom: 40px;
   font-size: 3rem;
-  animation: flash 0.8s ease-out infinite;
+  animation: scollDown 0.8s ease-out infinite;
   cursor: pointer;
   user-select: none;
 }
@@ -130,8 +125,8 @@ body {
 .interests-icons {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 280px));
-  gap: 64px;
+  grid-template-columns: repeat(3, minmax(100px, 200px));
+  gap: 56px;
 }
 
 .interests-icons__div {
@@ -146,7 +141,7 @@ body {
 }
 
 .interests-icons__span {
-  font-size:  min(28vw, 280px);
+  font-size:  min(28vw, 200px);
   width: 280px;
   height: 280px;
 }

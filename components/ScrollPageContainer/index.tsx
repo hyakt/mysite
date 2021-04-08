@@ -3,9 +3,9 @@ import React, { Children, useCallback, useMemo, useRef, useState } from "react";
 import "./index.css";
 
 type Props = {
-  animationDelay: number;
-  animationDelayBuffer: 200;
-  scrollableMomentum: 10;
+  animationDelay?: number;
+  animationDelayBuffer?: 200;
+  scrollableMomentum?: 10;
 };
 
 export const ScrollPageContainer: React.FC<Props> = (
@@ -42,7 +42,7 @@ export const ScrollPageContainer: React.FC<Props> = (
     setTimeout(() => {
       scrolling.current = false;
     }, animationDelay + animationDelayBuffer);
-  }, [scrolling.current]);
+  }, [scrolling.current, animationDelay, animationDelayBuffer]);
 
   const scrollPageDown = useCallback(() => {
     if (
@@ -100,7 +100,9 @@ export const ScrollPageContainer: React.FC<Props> = (
         className="scroll-navigator"
         style={{ transition: `transform ${animationDelay}ms ease-in-out` }}
       >
-        {navigatorCircles.map((e) => e ? <div>●</div> : <div>○</div>)}
+        {navigatorCircles.map((e, i) =>
+          e ? <div key={i}>●</div> : <div key={i}>○</div>
+        )}
       </div>
       {children}
     </div>
