@@ -6,7 +6,6 @@
     },
     "build": {
       "cmd": "aleph build",
-      "reload": true,
       "imap": "import_map.json"
     },
     "dev": {
@@ -14,6 +13,7 @@
       "imap": "import_map.json"
     },
     "fmt": "deno fmt",
-    "deploy": "vercel"
+    "deploy": "vr clean; vr build; vercel",
+    "clean": "rm -rf .aleph dist;"
   }
 }
