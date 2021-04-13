@@ -4,7 +4,7 @@ My profile site🐷
 ## TODO
 - [x] check Mobile
 - [ ] add Google Analytics
-- [ ] add favicon
+- [x] add favicon
 - [ ] add Project Page
 - [ ] add Blog
 - [ ] add OGP
