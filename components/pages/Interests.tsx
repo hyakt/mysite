@@ -13,9 +13,6 @@ export const Interests: React.FC = () => (
         <div className="interests-icons__div">
           <img className="interests-icons__img" src="/js.svg" alt="js" />
         </div>
-        <div className="interests-icons__div">
-          <span className="interests-icons__span">🍺</span>
-        </div>
       </div>
     </div>
   </div>
