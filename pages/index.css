@@ -84,7 +84,7 @@ body {
 
 .profile-scroll {
   position: absolute;
-  bottom: 40px;
+  top: 90vh;
   font-size: 3rem;
   animation: scollDown 0.8s ease-out infinite;
   cursor: pointer;
