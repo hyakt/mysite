@@ -30,6 +30,21 @@ export default function App(
         <meta name="msapplication-TileColor" content="#fefefe" />
         <meta name="theme-color" content="#fefefe" />
       </head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=GTM-NSHVRRP"
+      >
+      </script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'GTM-NSHVRRP');
+        `}
+      </script>
       <main>
         <Page {...pageProps} />
       </main>
