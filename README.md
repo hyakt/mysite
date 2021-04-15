@@ -13,7 +13,7 @@ My profile site🐷
 
 ## How to deploy‍💁‍♀️
 1. `sh ./init.sh`
-2. `vr build`
+2. `vr deploy`
 
 ## Design🎨
 https://www.figma.com/file/QGtAyQMIVCUZCgppdcKiES/mysite
