@@ -1,5 +1,6 @@
 import React, { ComponentType } from "react";
 import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+import { gtmScript, gtmFrame } from "./lib/gtag.ts";
 
 export default function App(
   { Page, pageProps }: { Page: ComponentType<any>; pageProps: any },
@@ -29,10 +30,21 @@ export default function App(
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content="#fefefe" />
         <meta name="theme-color" content="#fefefe" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: gtmScript,
+          }}
+        />
       </head>
-      <main>
-        <Page {...pageProps} />
-      </main>
+      <body>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: gtmFrame
+        }} />
+        <main>
+          <Page {...pageProps} />
+        </main>
+      </body>
     </>
   );
 }
