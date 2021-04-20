@@ -1,12 +1,11 @@
 import type { APIRequest } from 'aleph/types.ts'
 
 const handler = async (req: APIRequest) => {
-  let pages: []
+  let pages = []
   for await (const dirEntry of Deno.readDir("/")) {
-    console.log(dirEntry)
     pages.push(dirEntry)
   }
-  req.json({ page })
+  req.json({ pages })
 }
 
 export default handler

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const Posts = () => {
-  useState(() => {
-    fetch("/api/pages").then((d) => console.log(d));
+  useState(async () => {
+    fetch("/api/pages").then((d) => d.json().catch(() => {})).then((d) =>
+      console.log(d)
+    );
+
+    const meta = await import("./meta.mdx");
+    console.log("meta: ", meta);
   }, []);
 
   return (
