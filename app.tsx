@@ -36,15 +36,13 @@ export default function App(
           }}
         />
       </head>
-      <body>
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: gtmFrame
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: gtmFrame
         }} />
-        <main>
-          <Page {...pageProps} />
-        </main>
-      </body>
+      <main>
+        <Page {...pageProps} />
+      </main>
     </>
   );
 }
