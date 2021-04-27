@@ -3,7 +3,7 @@ import { useMarkdownFiles } from "~/components/custom-hooks.ts"
 
 const POSTS_PATH = "./pages/posts";
 
-const Blog = () => {
+const Posts = () => {
   const posts = useMarkdownFiles(POSTS_PATH)
 
   return (
@@ -13,4 +13,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Posts;
