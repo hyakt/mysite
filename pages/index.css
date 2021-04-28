@@ -68,6 +68,11 @@ body {
   height: 440px;
 }
 
+.profile-blog {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .profile__subtitle {
   margin-top: 40px;
   font-size: 2rem;

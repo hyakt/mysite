@@ -36,6 +36,11 @@ export const Profile: React.FC = () => (
         <div className="profile-img">
           <img className="profile-img__img" src="/profile.png" alt="profile" />
         </div>
+        <div className="profile-blog">
+          <a href="/posts">
+            ➡️Blog
+          </a>
+        </div>
       </div>
       <div>
         <div className="profile__subtitle">
