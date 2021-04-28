@@ -10,7 +10,9 @@ My profile site🐷
 - [ ] add OGP
 - [ ] change Domain(puts to hyakt.dev)
 - [ ] add mediaquery
-- [ ] add dark theme
+- [ ] add header
+  - [ ] add dark theme
+
 
 ## How to deploy‍💁‍♀️
 1. `sh ./init.sh`

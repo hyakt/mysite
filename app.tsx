@@ -1,6 +1,7 @@
 import React, { ComponentType } from "react";
 import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
-import { gtmScript, gtmFrame } from "./lib/gtag.ts";
+import { gtmFrame, gtmScript } from "./lib/gtag.ts";
+import "./index.css";
 
 export default function App(
   { Page, pageProps }: { Page: ComponentType<any>; pageProps: any },
@@ -38,8 +39,9 @@ export default function App(
       </head>
       <noscript
         dangerouslySetInnerHTML={{
-          __html: gtmFrame
-        }} />
+          __html: gtmFrame,
+        }}
+      />
       <main>
         <Page {...pageProps} />
       </main>
