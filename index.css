@@ -142,3 +142,25 @@ body {
   font-weight: bold;
   font-size: 2rem;
 }
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts__title {
+  font-family: var(--font-family-display);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.posts-posts {
+  margin-top: 40px;
+}
+
+.posts-posts__title {
+  font-family: var(--font-family-display);
+  font-size: 1rem;
+}
