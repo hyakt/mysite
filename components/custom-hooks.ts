@@ -2,6 +2,8 @@ import { useDeno } from "framework/react";
 import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
 import { readAll } from "https://deno.land/std/io/util.ts";
 
+import dayjs from "http://esm.sh/dayjs";
+
 type MarkdownFile = {
   filename: string;
   readonly [key: string]: unknown;
@@ -18,10 +20,21 @@ export const useMarkdownFiles = (path: string): MarkdownFile[] => (
       const file = await Deno.open(filepath, { read: true });
       const content = await readAll(file);
       const fileInfo = await Deno.fstat(file.rid);
-      const { __content, ...meta } = safeLoadFront(decoder.decode(content));
-      posts.push({ filename: name.split(".")[0], ...meta, ...fileInfo });
       Deno.close(file.rid);
+      const { __content, ...meta } = safeLoadFront(decoder.decode(content));
+      const filename = name.split(".")[0];
+      const [date, title] = filename.split("_");
+      if (!filename) continue;
+      posts.push({
+        filename,
+        title,
+        date,
+        ...meta,
+        ...fileInfo,
+      });
     }
-    return posts.sort((a, b) => (a.birthtime as number) - (b.birthtime as number));
+    return posts.sort((a, b) =>
+      dayjs(b.date as string).unix() - dayjs(a.date as string).unix()
+    );
   })
 );

@@ -18,7 +18,7 @@ const Posts = () => {
           {posts.map((e) =>
             <div key={e.filename} className="posts-posts__title">
               <a href={`/posts/${e.filename}`}>
-                {dayjs(e.date).format("YYYY-MM-DD")} {e.filename}
+                {dayjs(e.date).format("YYYY-MM-DD")} {e.title}
               </a>
             </div>
           )}
