@@ -7,7 +7,6 @@ const POSTS_PATH = "./pages/posts";
 
 const Posts = () => {
   const posts = useMarkdownFiles(POSTS_PATH);
-  console.log("posts: ", posts);
 
   return (
     <div className="page">
