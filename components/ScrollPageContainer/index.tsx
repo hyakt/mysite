@@ -1,4 +1,11 @@
-import React, { Children, useCallback, useMemo, useRef, useState } from "react";
+import React, {
+  Children,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import "./index.css";
 
@@ -26,6 +33,13 @@ export const ScrollPageContainer: React.FC<Props> = (
       ),
     [currentPageIndex],
   );
+
+  useEffect(()=>{
+    document.querySelector("body")?.classList.add("fixed")
+    return () => {
+      document.querySelector("body")?.classList.remove("fixed")
+    }
+  }, []);
 
   const scrolling = useRef<boolean>(false);
   const scrollContainer = useRef<any>(null);
