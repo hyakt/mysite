@@ -158,6 +158,8 @@ body {
 
 .posts-posts {
   margin-top: 40px;
+  height: 60vh;
+  overflow: scroll;
 }
 
 .posts-posts__title {
