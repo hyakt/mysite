@@ -166,3 +166,30 @@ body {
   font-family: var(--font-family-display);
   font-size: 1rem;
 }
+
+.article {
+  width: 80vw;
+  margin: 4rem auto;
+}
+
+.article > h1 {
+  margin: 56px 0 40px 0;
+  text-align: center;
+}
+
+.article > h2 {
+  margin: 32px 0;
+}
+
+.article > h1, h2, h3 {
+  font-family: var(--font-family-display);
+}
+
+.article > p {
+  font-family: var(--font-family-sans-serif)
+}
+
+.article > pre > code {
+  border-radius: 0.3rem;
+  padding: 1rem;
+}

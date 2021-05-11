@@ -1,11 +1,20 @@
-import React, { ComponentType } from "react";
-import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+import React, { ComponentType, useEffect } from "react";
+import hljs from "https://cdn.skypack.dev/highlight.js";
 import { gtmFrame, gtmScript } from "./lib/gtag.ts";
+
+import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css";
 import "./index.css";
 
 export default function App(
   { Page, pageProps }: { Page: ComponentType<any>; pageProps: any },
 ) {
+  useEffect(() => {
+    document?.querySelectorAll("pre code")?.forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  }, []);
+
   return (
     <>
       <head>
