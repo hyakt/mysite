@@ -168,7 +168,7 @@ body {
 }
 
 .article {
-  width: 80vw;
+  max-width: 880px;
   margin: 4rem auto;
 }
 
