@@ -14,6 +14,7 @@
     },
     "fmt": "deno fmt",
     "deploy": "vr clean; vr build; vercel",
-    "clean": "rm -rf .aleph dist;"
+    "clean": "rm -rf .aleph dist;",
+    "clean:deno-cache": " rm -rf ~/Library/Caches/deno/"
   }
 }
